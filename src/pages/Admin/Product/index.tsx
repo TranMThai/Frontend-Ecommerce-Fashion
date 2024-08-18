@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductManager = () => {
   return (
-    <div>ProductManager</div>
+    <div style={{height: '200vh'}}>ProductManager</div>
   )
 }
 

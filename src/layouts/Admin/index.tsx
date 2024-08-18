@@ -21,6 +21,7 @@ const AdminLayout: React.FC = () => {
                 toggled={toggled}
                 setToggled={setToggled}
                 setBroken={setBroken}
+                broken={broken}
             />
             <div className='w-100'>
                 <AdminHeader

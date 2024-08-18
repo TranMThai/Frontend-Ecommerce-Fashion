@@ -19,10 +19,10 @@ const Button: React.FC<IProps> = ({ children, color, backgroundColor, fontSize, 
                 borderRadius: 1.5,
                 fontSize: fontSize ?? 16,
                 textAlign: 'center',
-                transition: 'background-color 0.2s, transform 0.2s',
+                transition: 'filter 0.3s, transform 0.2s',
 
                 '&:hover': {
-                    filter: 'saturate(1.5)',
+                    filter: 'saturate(2)',
                 },
                 ...sx
             }}
