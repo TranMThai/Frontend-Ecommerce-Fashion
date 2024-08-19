@@ -47,6 +47,9 @@ const AdminSidebar: React.FC<IProps> = ({ collapse, toggled, setToggled, setBrok
                     <img src="/logo.png" alt="" width='100%' />
                 </Box>
                 <IconButton
+                    sx={{
+                        display: broken ? 'block' : 'none'
+                    }}
                     onClick={() => setToggled(false)}
                 >
                     <i className="fa-solid fa-xmark text-white m-2" />

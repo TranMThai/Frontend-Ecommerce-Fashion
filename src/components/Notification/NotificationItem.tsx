@@ -24,24 +24,18 @@ const NotificationItem: React.FC<IProps> = ({ notification }) => {
                 sx={{ mr: 2 }}
             />
             <Stack spacing={0.5}>
-                <Box
-                    display="flex"
-                    alignItems='center'
-                    flexWrap="wrap"
+                <Typography
+                    variant="body2"
                 >
                     <Typography
+                        display='inline'
                         variant="subtitle2"
-                        fontWeight="bold"
-                        mr={0.6}
+                        mr={0.7}
                     >
                         {notification.sender.name}
                     </Typography>
-                    <Typography
-                        variant="body2"
-                    >
-                        {notification.message}
-                    </Typography>
-                </Box>
+                    {notification.message}
+                </Typography>
                 <Typography
                     variant="caption"
                     color="textSecondary"
