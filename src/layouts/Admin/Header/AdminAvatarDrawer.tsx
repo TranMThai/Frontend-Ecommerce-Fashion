@@ -1,4 +1,4 @@
-import { Avatar, Box, Drawer, Grid, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Drawer, Grid, IconButton, Stack, Typography } from '@mui/material';
 import React from 'react';
 import Button from '../../../components/Button';
 import { useSelector } from 'react-redux';
@@ -22,7 +22,7 @@ const AdminAvatarDrawer: React.FC<IProps> = ({ open, toggleDrawer }) => {
             <Box
                 sx={{
                     width: {
-                        xs: 200,
+                        xs: '90vw',
                         md: 330
                     },
                     padding: 2,
@@ -30,6 +30,11 @@ const AdminAvatarDrawer: React.FC<IProps> = ({ open, toggleDrawer }) => {
                     backgroundColor: '#f5f5f5'
                 }}
             >
+                <IconButton
+                    onClick={toggleDrawer ? toggleDrawer(false) : undefined}
+                >
+                    <i className="fa-solid fa-xmark" />
+                </IconButton>
                 <Grid
                     container
                     justifyContent='center'

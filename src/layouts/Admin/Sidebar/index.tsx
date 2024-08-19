@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Sidebar as SidebarPro, SubMenu } from 'react-pro-sidebar';
 import MenuItem from './MenuItem';
-import { Box } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 
 interface IProps {
     collapse: boolean,
@@ -17,7 +17,7 @@ const AdminSidebar: React.FC<IProps> = ({ collapse, toggled, setToggled, setBrok
         <SidebarPro
             collapsed={collapse}
             collapsedWidth="5em"
-            width={broken ? "13em" : "18em"}
+            width={broken ? "90vw" : "18em"}
             backgroundColor='#141A21'
             rootStyles={{
                 border: '0',
@@ -32,15 +32,25 @@ const AdminSidebar: React.FC<IProps> = ({ collapse, toggled, setToggled, setBrok
             onBreakPoint={setBroken}
         >
             <Box
-                width={55}
-                sx={{
-                    overflow: 'hidden',
-                    borderRadius: 2,
-                    marginLeft: collapse ? 1.5 : 4  ,
-                    marginTop: 3
-                }}
+                display='flex'
+                justifyContent='space-between'
             >
-                <img src="/logo.png" alt="" width='100%' />
+                <Box
+                    width={55}
+                    sx={{
+                        overflow: 'hidden',
+                        borderRadius: 2,
+                        marginLeft: collapse ? 1.5 : 4,
+                        marginTop: 3
+                    }}
+                >
+                    <img src="/logo.png" alt="" width='100%' />
+                </Box>
+                <IconButton
+                    onClick={() => setToggled(false)}
+                >
+                    <i className="fa-solid fa-xmark text-white m-2" />
+                </IconButton>
             </Box>
             <Menu
                 rootStyles={{
