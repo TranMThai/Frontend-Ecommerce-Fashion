@@ -123,7 +123,7 @@ const NotificationBox: React.FC<IProps> = ({ open, toggleDrawer, setTotalNotific
             <Box
                 sx={{
                     width: {
-                        xs: 200,
+                        xs: '100vw',
                         md: 330
                     },
                     padding: 2,
@@ -136,7 +136,17 @@ const NotificationBox: React.FC<IProps> = ({ open, toggleDrawer, setTotalNotific
                     alignItems='center'
                     justifyContent='space-between'
                 >
-                    <Typography variant='h6'>Thông báo</Typography>
+                    <Stack
+                        direction='row'
+                        alignItems='center'
+                    >
+                        <IconButton
+                            onClick={toggleDrawer ? toggleDrawer(false) : undefined}
+                        >
+                            <i className="fa-solid fa-xmark" />
+                        </IconButton>
+                        <Typography variant='h6'>Thông báo</Typography>
+                    </Stack>
                     <Tooltip title="Đánh dấu đã đọc hết">
                         <IconButton
                         >
