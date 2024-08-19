@@ -27,13 +27,13 @@ const NotificationItem: React.FC<IProps> = ({ notification }) => {
                 <Typography
                     variant="body2"
                 >
-                    <Typography
-                        display='inline'
-                        variant="subtitle2"
-                        mr={0.7}
+                    <strong
+                        style={{
+                            marginRight: 5
+                        }}
                     >
                         {notification.sender.name}
-                    </Typography>
+                    </strong>
                     {notification.message}
                 </Typography>
                 <Typography

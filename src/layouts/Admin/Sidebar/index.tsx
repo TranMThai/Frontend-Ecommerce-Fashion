@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Sidebar as SidebarPro, SubMenu } from 'react-pro-sidebar';
 import MenuItem from './MenuItem';
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton, useMediaQuery } from '@mui/material';
 
 interface IProps {
     collapse: boolean,
@@ -13,11 +13,13 @@ interface IProps {
 
 const AdminSidebar: React.FC<IProps> = ({ collapse, toggled, setToggled, setBroken, broken }) => {
 
+    const xs = useMediaQuery('(max-width: 356px)');
+
     return (
         <SidebarPro
             collapsed={collapse}
             collapsedWidth="5em"
-            width={broken ? "90vw" : "18em"}
+            width={broken ? xs ? '90vw' : '320px' : "20em"}
             backgroundColor='#141A21'
             rootStyles={{
                 border: '0',
