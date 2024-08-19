@@ -21,6 +21,22 @@ const NotificationBox: React.FC<IProps> = ({ open, toggleDrawer, setTotalNotific
     const [actionButton, setActionButton] = useState<number>(0)
 
     useEffect(() => {
+        handleAllNotification()
+    }, [])
+
+    useEffect(() => {
+
+        const count = notifications.reduce((total, current) => {
+            if (!current.viewed && !current.deleted) {
+                return total + 1
+            }
+            return total
+        }, 0)
+
+        setTotalNotifications(count)
+    }, [notifications])
+
+    const handleAllNotification = () => {
         setNotifications([
             {
                 id: 1,
@@ -67,25 +83,34 @@ const NotificationBox: React.FC<IProps> = ({ open, toggleDrawer, setTotalNotific
                 createAt: new Date()
             },
         ])
-    }, [])
-
-    useEffect(() => {
-
-        const count = notifications.reduce((total, current) => {
-            if (!current.viewed && !current.deleted) {
-                return total + 1
-            }
-            return total
-        }, 0)
-
-        setTotalNotifications(count)
-    }, [notifications])
-
-    const handleAllNotification = () => {
         setActionButton(0)
     }
 
     const handleUnreadNotification = () => {
+        setNotifications([
+            {
+                id: 2,
+                message: "đã bố thí bạn 1 tỷ",
+                sender: {
+                    name: 'Thaideptraibodoiqua',
+                    avatar: 'https://hoang-phuc.com/media/magefan_blog/2021/12/meme-cheems-1.jpg'
+                },
+                viewed: false,
+                deleted: false,
+                createAt: new Date()
+            },
+            {
+                id: 3,
+                message: "đặt đơn hàng",
+                sender: {
+                    name: 'BeXuanMaiLonTon',
+                    avatar: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQP-OqBydsr8MWjV-dRe6I5s-0Myl_0XyS62PicRKrMURYvVmzA'
+                },
+                viewed: false,
+                deleted: false,
+                createAt: new Date()
+            }
+        ])
         setActionButton(1)
     }
 
