@@ -29,7 +29,6 @@ const AdminAvatarDrawer: React.FC<IProps> = ({ open, toggleDrawer }) => {
                     height: '100%',
                     backgroundColor: '#f5f5f5'
                 }}
-                role="presentation"
             >
                 <Grid
                     container

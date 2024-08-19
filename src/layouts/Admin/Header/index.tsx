@@ -1,10 +1,10 @@
 import { AppBar, Box, IconButton, Toolbar, Typography } from '@mui/material'
 import React from 'react'
-import Notification from '../../../components/Notification'
 import Avatar from '../../../components/Avatar'
 import AdminAvatarDrawer from './AdminAvatarDrawer'
 import { useSelector } from 'react-redux'
 import { userSelector } from '../../../redux/reducers/UserReducer'
+import Notification from '../../../components/Notification'
 
 interface IProps {
     handleCollapse: () => void,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu, Sidebar as SidebarPro, SubMenu } from 'react-pro-sidebar';
 import MenuItem from './MenuItem';
+import { Box } from '@mui/material';
 
 interface IProps {
     collapse: boolean,
@@ -30,9 +31,20 @@ const AdminSidebar: React.FC<IProps> = ({ collapse, toggled, setToggled, setBrok
             onBackdropClick={() => setToggled(false)}
             onBreakPoint={setBroken}
         >
+            <Box
+                width={55}
+                sx={{
+                    overflow: 'hidden',
+                    borderRadius: 2,
+                    marginLeft: collapse ? 1.5 : 4  ,
+                    marginTop: 3
+                }}
+            >
+                <img src="/logo.png" alt="" width='100%' />
+            </Box>
             <Menu
                 rootStyles={{
-                    marginTop: 30
+                    marginTop: 20
                 }}
                 menuItemStyles={{
                     subMenuContent: {

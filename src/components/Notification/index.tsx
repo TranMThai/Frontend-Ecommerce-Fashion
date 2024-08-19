@@ -5,6 +5,7 @@ import NotificationBox from './NotificationBox'
 const Notification: React.FC = () => {
 
     const [open, setOpen] = useState(false);
+    const [totalNotifications, setTotalNotifications] = useState<number>(0)
 
     const toggleDrawer = (open: boolean) => () => {
         setOpen(open);
@@ -34,19 +35,20 @@ const Notification: React.FC = () => {
                         backgroundColor: 'red',
                         color: 'white',
                         borderRadius: '50%',
-                        display: 'flex',
+                        display: totalNotifications?'flex':'none',
                         justifyContent: 'center',
                         alignItems: 'center',
                         fontSize: 15,
                     }}
                 >
-                    99
+                    {totalNotifications}
                 </Box>
             </IconButton>
 
             <NotificationBox
                 open={open}
                 toggleDrawer={toggleDrawer}
+                setTotalNotifications={setTotalNotifications}
             />
         </>
     )
