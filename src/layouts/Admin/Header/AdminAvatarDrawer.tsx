@@ -40,28 +40,46 @@ const AdminAvatarDrawer: React.FC<IProps> = ({ open, toggleDrawer }) => {
                     justifyContent='center'
                     rowGap={1}
                 >
-                    <Box
-                        sx={{
-                            width: "60%",
-                            aspectRatio: "1/1"
-                        }}
+                    <Grid
+                        xs={12}
+                        display='flex'
+                        justifyContent='center'
                     >
-                        <Avatar
-                            alt="Remy Sharp"
-                            src={user?.avatar}
+                        <Box
                             sx={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover'
+                                width: "60%",
+                                aspectRatio: "1/1"
                             }}
-                        />
-                    </Box>
-                    <Typography variant='h6'>
-                        {user?.name}
-                    </Typography>
-                    <Typography variant='body2' noWrap>
-                        {user?.username}
-                    </Typography>
+                        >
+                            <Avatar
+                                alt="Remy Sharp"
+                                src={user?.avatar}
+                                sx={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover'
+                                }}
+                            />
+                        </Box>
+                    </Grid>
+                    <Grid
+                        xs={12}
+                        display='flex'
+                        justifyContent='center'
+                    >
+                        <Typography variant='h6'>
+                            {user?.name}
+                        </Typography>
+                    </Grid>
+                    <Grid
+                        xs={12}
+                        display='flex'
+                        justifyContent='center'
+                    >
+                        <Typography variant='body2' noWrap>
+                            {user?.username}
+                        </Typography>
+                    </Grid>
                 </Grid>
 
                 <Stack>
